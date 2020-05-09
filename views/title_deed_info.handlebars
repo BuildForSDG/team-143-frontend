@@ -1,0 +1,19 @@
+<h2 class="page-header">Land Title Deed</h2>
+<form method="POST" action="/users/login">
+
+    <div class="form-group">
+        <label>The land size in SQ. Meters</label>
+        <input type="number" class="form-control" name="password" placeholder="Password">
+    </div>
+ 
+    <div class="form-group">
+        <label>Latitude:</label>
+        <input type="text" id="latitude"  />
+    </div>
+
+    <div class="form-group">
+        <label>Longitude:</label>
+        <input type="text" id="longitude" />
+    </div>      
+    <button class="submit"  class="btn btn-default" onclick="createGeoJSON()">Submit</button>
+</form>
