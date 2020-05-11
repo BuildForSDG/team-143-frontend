@@ -14,7 +14,9 @@ import { LrDashboardComponent } from './lr-dashboard/lr-dashboard.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      { path: "login", component: LoginComponent }
+      { path: "login", component: LoginComponent },
+      { path: "lrdashboard", component: LrDashboardComponent }
+
     ])
   ]
 })
