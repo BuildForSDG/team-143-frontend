@@ -10,6 +10,27 @@
 
     <title>LMS</title>
     <base href="/">
+
+    <!--Global stylesheets -->
+    <link rel="stylesheet" href="./assets/css/lms-universal.css">
+    <link rel="stylesheet" href="./assets/css/lms-ui.css">
+    <link rel="stylesheet" href="./assets/css/flaticon.css">
+    
+
+    <!--begin::Fonts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+		<script>
+			WebFont.load({
+				google: {
+					"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+				},
+				active: function() {
+					sessionStorage.fonts = true;
+				}
+			});
+		</script>
+
+		<!--end::Fonts -->
   </head>
   <body>
     <app-root></app-root>
