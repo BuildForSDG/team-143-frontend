@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { IUser } from "../user.model";
+import { IUser } from "../user/user.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { of } from "rxjs";
 import { tap, catchError } from "rxjs/operators";

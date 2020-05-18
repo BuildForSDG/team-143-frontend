@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { AuthService } from "./user/login/auth.service";
+import { AuthService } from "./login/auth.service";
 
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";

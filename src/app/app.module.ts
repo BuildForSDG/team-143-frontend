@@ -3,23 +3,30 @@ import { NgModule } from "@angular/core";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from "./app.component";
-import { HomeComponent } from "./home/home.component";
+import { LoginComponent } from "./login/login.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { UserModule } from "./user/user.module";
-import { AuthService } from './user/login/auth.service';
+import { AuthService } from './login/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "home", component: HomeComponent },
-      { path: "", redirectTo: "home", pathMatch: "full"},
-      { path: "**", redirectTo: "home", pathMatch: "full"},
+      { path: "login", component: LoginComponent },
+      { path: "dashboard", component: DashboardComponent },
+      { path: "", redirectTo: "login", pathMatch: "full"},
+      { path: "**", redirectTo: "login", pathMatch: "full"},
       {path: "user", loadChildren: "./user/user.module#UserModule"}
     ]),
     UserModule,

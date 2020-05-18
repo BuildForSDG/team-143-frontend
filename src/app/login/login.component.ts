@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       if (!resp) {
         this.loginInvalid = true;
       } else {
-        this.router.navigate(["lrComponent"]);
+        this.router.navigate(["dashboard"]);
       }
     });
 
