@@ -1,29 +1,22 @@
-import { Component } from "@angular/core";
-
-import { AuthService } from "./login/auth.service";
-
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { faChartPie } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.html",
+  template: `
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+  `,
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   pageTitle = "Land Management System";
-  faSearch = faSearch;
-  faBell = faBell;
-  faHome = faHome;
-  faDatabase = faDatabase;
-  faChevronRight = faChevronRight;
-  faChartPie = faChartPie;
-  faUser = faUser;
+  
+  constructor( private auth:AuthService) {}
 
-  constructor( public auth:AuthService) {}
+  ngOnInit () {
+    this.auth.checkAuthenticationStatus();
+  }
+
+  
 }

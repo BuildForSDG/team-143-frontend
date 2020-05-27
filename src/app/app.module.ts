@@ -1,13 +1,15 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
+import { NavbarComponent } from "./navigation/navbar.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { UserModule } from "./user/user.module";
-import { AuthService } from './login/auth.service';
+import { AuthService } from './auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserModule,
     FontAwesomeModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    DataTablesModule
+  ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [
     AuthService

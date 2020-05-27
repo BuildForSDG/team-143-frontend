@@ -1,0 +1,59 @@
+<div class="kt-quick-panel--right kt-demo-panel--right 
+kt-offcanvas-panel--right kt-header--fixed 
+kt-header-mobile--fixed kt-subheader--enabled
+ kt-subheader--transparent 
+  kt-page--loading clearfix
+ ">
+    <div class="row">
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
+
+            <!-- end:: Aside -->
+    
+            <!-- begin:: Aside Menu -->
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1">
+                    <ul class="kt-menu__nav ">
+                        <li routerLink="/revenue/pending" class="kt-menu__item " aria-haspopup="true">
+                            <a class="kt-menu__link ">
+                                <fa-icon [icon]="faEllipsisH" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Pending Transfers</span>
+                            </a>
+                        </li>
+                        
+                        <li routerLink="/revenue/approvals" class="kt-menu__item" aria-haspopup="true" >
+                            <a  class="kt-menu__link kt-menu__toggle">
+                                <fa-icon [icon]="faCheck" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Approvals</span>
+                            </a>
+                        </li>
+                        <li routerLink="/revenue/declines" class="kt-menu__item " aria-haspopup="true">
+                            <a class="kt-menu__link ">
+                                <fa-icon [icon]="faTimes" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Declines</span>
+                            </a>
+                        </li> 
+                        <li routerLink="/revenue/log" class="kt-menu__item " aria-haspopup="true">
+                            <a class="kt-menu__link ">
+                                <fa-icon [icon]="faFileAlt" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Activity Log</span>
+                            </a>
+                        </li>                   
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- end:: Aside Menu -->
+        </div>
+        
+        <!-- Begin router-outlet -->
+        
+        <div class="kt-child kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+            <router-outlet></router-outlet>
+        </div>
+        
+    </div>
+    <div class="clearfix"></div>
+</div>         
+ 
+
+    
