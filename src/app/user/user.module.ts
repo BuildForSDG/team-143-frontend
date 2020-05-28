@@ -28,6 +28,8 @@ import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.comp
     ApproveLandTransferComponent,
     RevenueDashboardComponent,
     PendingComponent,
+    DeclinesComponent,
+    ApprovalsComponent,
     AdminDashboardComponent
   ],
   imports: [
