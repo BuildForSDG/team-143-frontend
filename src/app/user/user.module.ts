@@ -11,9 +11,12 @@ import { NewLandRecordComponent } from "./lr-dashboard/actions/new-land-record.c
 import { InitiateTransferComponent } from './lr-dashboard/actions/initiate-transfer.component';
 import { ModifyLandRecordComponent } from './lr-dashboard/actions/modify-land-record.component';
 import { ApproveLandTransferComponent } from './lr-dashboard/actions/approve-land-transfer.component';
-import { RevenueDashboardComponent } from './revenue-dashboard/revenue-dashboard.component';
-
-
+import { RevenueDashboardComponent } from './revenue-dashboard/revenue_dashboard.component';
+import { ApprovalsComponent } from './revenue-dashboard/actions/approvals.component';
+import { DeclinesComponent } from './revenue-dashboard/actions/declines.component';
+import { ActivityLogComponent } from './revenue-dashboard/actions/activity-log.component';
+import { PendingComponent } from './revenue-dashboard/actions/pending.component';
+import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [ 
@@ -23,7 +26,11 @@ import { RevenueDashboardComponent } from './revenue-dashboard/revenue-dashboard
     InitiateTransferComponent,
     ModifyLandRecordComponent,
     ApproveLandTransferComponent,
-    RevenueDashboardComponent
+    RevenueDashboardComponent,
+    PendingComponent,
+    DeclinesComponent,
+    ApprovalsComponent,
+    AdminDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -45,9 +52,17 @@ import { RevenueDashboardComponent } from './revenue-dashboard/revenue-dashboard
         path: "revenue", 
         component: RevenueDashboardComponent,
         children:[
-          {path:"approvals", component:LandOwnerRegistration},
-          {path:"declines", component:NewLandRecordComponent},
-          {path:"log", component:InitiateTransferComponent}
+          {path:"pending", component:PendingComponent},
+          {path:"approvals", component:ApprovalsComponent},
+          {path:"declines", component:DeclinesComponent},
+          {path:"log", component:ActivityLogComponent}
+        ] 
+      },
+      { 
+        path: "admin", 
+        component: RevenueDashboardComponent,
+        children:[
+          {path:"admin", component:AdminDashboardComponent}
         ] 
       }
     ]),
