@@ -8,7 +8,7 @@ import { LoginComponent } from "./auth/login/login.component";
 import { NavbarComponent } from "./navigation/navbar.component";
 import { CheckinComponent } from "./auth/checkin/checkin.component";
 import { RouterModule, } from "@angular/router";
-import { UserModule } from "./modules/user.module";
+import { UsersModule } from "./users/users.module";
 import { AuthService, AlertsService } from './services';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -33,9 +33,9 @@ import {
       { path: "checkin" , component: CheckinComponent, canActivate: [AuthGuard]},
       { path: "", redirectTo: "login", pathMatch: "full"},
       { path: "**", redirectTo: "login", pathMatch: "full"},
-      {path: "user", canActivate: [AuthGuard], loadChildren: "./user/user.module#UserModule"}
+      {path: "user", canActivate: [AuthGuard], loadChildren: "./users/users.module#UserModule"}
     ]),
-    UserModule,
+    UsersModule,
     FontAwesomeModule,
     HttpClientModule,
     CommonModule,
