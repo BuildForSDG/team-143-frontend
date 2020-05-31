@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup,FormBuilder,Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { AuthService } from "../auth/auth.service";
+import { AuthService, AlertsService } from "../services";
 
 @Component({
   selector: "app-login",
@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
 
   constructor( private authService:AuthService,
      private router:Router,
-     private fb:FormBuilder) { }
+     private fb:FormBuilder,
+     private alertsService: AlertsService
+
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -34,23 +37,22 @@ export class LoginComponent implements OnInit {
     );
   }
 
- /* onSubmit() {
-    if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value); // {7}
-    }
-    this.formSubmitAttempt = true;             // {8}
-  } */
-
   login(user) {
     this.authService.loginUser(user.userName, user.password)
-      .subscribe(resp => {
-        console.log(resp);
-      if (!resp) {
-        this.loginInvalid = true;
-      } else {
-        this.router.navigate(["dashboard"]);
-      }
-    });
+      .subscribe(
+        response => {
+          console.log(response);
+          if(response){
+            localStorage.setItem('user',JSON.stringify(response));
+            this.router.navigate(["/checkin"]);
+          }else{
+            this.alertsService.setAlert('error', 'Ooops! We encountered an error processing your request.');
+          }
+        },
+        error => {
+          this.alertsService.handleError(error);
+        }
+      );
 
   }
 

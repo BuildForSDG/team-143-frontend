@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 
 
 @Component({
-  selector: "app-dashboard",
-  templateUrl: "./dashboard.component.html",
+  selector: "app-checkin",
+  templateUrl: "./checkin.component.html",
   styles: [`.row{
     margin:5% 0 0 18%;
   }`]
 })
-export class DashboardComponent implements OnInit {
+export class CheckinComponent implements OnInit {
 
 
   constructor() { }

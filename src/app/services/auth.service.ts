@@ -3,7 +3,9 @@ import { IUser } from "../user/user.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { of } from "rxjs";
 import { tap, catchError } from "rxjs/operators";
+import { environment } from '../../environments/environment';
 
+const url = environment.app.url;
 
 @Injectable()
 
@@ -16,27 +18,27 @@ export class AuthService {
     const loginInfo = {username: userName, password: password };
     const options = { headers: new HttpHeaders({"Content-Type": "application/json"})};
 
-    return this.http.post("/api/login", loginInfo, options)
+    return this.http.post(url + "/auth/login", loginInfo, options)
       .pipe(tap(data => {
         this.currentUser = <IUser>data["user"];
       }))
-      .pipe(catchError(err => {
-        return of(false);
+      // .pipe(catchError(err => {
+      //   return of(false);
+      // }));
+  }
+
+  getUserByAccessToken(userId: string, accessToken: string) {
+    const loginInfo = {userId: userId, accessToken: accessToken };
+    const options = { headers: new HttpHeaders({"Content-Type": "application/json"})};
+
+    return this.http.post(url + "/auth/getUserByAccessToken", loginInfo, options)
+      .pipe(tap(data => {
+        this.currentUser = <IUser>data["user"];
       }));
   }
 
   isAuthenticated() {
     return !!this.currentUser;
-  }
-
-  checkAuthenticationStatus() {
-    return this.http.get("/api/currentIdentity")
-    .pipe(tap(data => {
-      if (data instanceof Object) {
-        this.currentUser = <IUser>data ;
-      }
-    }))
-    .subscribe();
   }
 
   updateCurrentUser (firstName: string, lastName: string) {

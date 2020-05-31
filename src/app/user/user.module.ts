@@ -17,6 +17,20 @@ import { DeclinesComponent } from './revenue-dashboard/actions/declines.componen
 import { ActivityLogComponent } from './revenue-dashboard/actions/activity-log.component';
 import { PendingComponent } from './revenue-dashboard/actions/pending.component';
 import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.component';
+//import services here
+import {
+  AuthService,
+  AlertsService,
+} from '../services';
+
+//import guards here
+import {
+  AuthGuard,
+  RevenueAuthGuard,
+  LandRegistryAuthGuard,
+  LandOwnerAuthGuard,
+  AdminAuthGuard
+} from '../guards';
 
 @NgModule({
   declarations: [ 
@@ -38,7 +52,8 @@ import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.comp
     ReactiveFormsModule,
     RouterModule.forChild([
       { 
-        path: "user", 
+        path: "user",
+        canActivate: [LandRegistryAuthGuard],
         component: LrDashboardComponent,
         children:[
           {path:"registration", component:LandOwnerRegistration},
@@ -49,7 +64,8 @@ import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.comp
         ] 
       },
       { 
-        path: "revenue", 
+        path: "revenue",
+        canActivate: [RevenueAuthGuard],
         component: RevenueDashboardComponent,
         children:[
           {path:"pending", component:PendingComponent},
@@ -59,7 +75,8 @@ import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.comp
         ] 
       },
       { 
-        path: "admin", 
+        path: "admin",
+        canActivate: [AdminAuthGuard],
         component: RevenueDashboardComponent,
         children:[
           {path:"admin", component:AdminDashboardComponent}
@@ -67,6 +84,11 @@ import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.comp
       }
     ]),
     FontAwesomeModule
+  ],
+  providers: [
+    LandRegistryAuthGuard,
+    RevenueAuthGuard,
+    AdminAuthGuard
   ]
 })
 export class UserModule { }
