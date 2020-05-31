@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "land-management": {
+    "land-registry": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/land-management",
+            "outputPath": "dist/land-registry",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "land-management:build"
+            "browserTarget": "land-registry:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "land-management:build:production"
+              "browserTarget": "land-registry:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "land-management:build"
+            "browserTarget": "land-registry:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "land-management:serve"
+            "devServerTarget": "land-registry:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "land-management:serve:production"
+              "devServerTarget": "land-registry:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "land-management"
+  "defaultProject": "land-registry"
 }
