@@ -3,20 +3,20 @@ import { CommonModule } from "@angular/common";
 
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { LrDashboardComponent } from './lr-dashboard/lr-dashboard.component';
+import { LrDashboardComponent } from './land-registrar/dashboard/lr-dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { LandOwnerRegistration } from "./lr-dashboard/actions/land-owner-reg.component";
-import { NewLandRecordComponent } from "./lr-dashboard/actions/new-land-record.component";
-import { InitiateTransferComponent } from './lr-dashboard/actions/initiate-transfer.component';
-import { ModifyLandRecordComponent } from './lr-dashboard/actions/modify-land-record.component';
-import { ApproveLandTransferComponent } from './lr-dashboard/actions/approve-land-transfer.component';
-import { RevenueDashboardComponent } from './revenue-dashboard/revenue_dashboard.component';
-import { ApprovalsComponent } from './revenue-dashboard/actions/approvals.component';
-import { DeclinesComponent } from './revenue-dashboard/actions/declines.component';
-import { ActivityLogComponent } from './revenue-dashboard/actions/activity-log.component';
-import { PendingComponent } from './revenue-dashboard/actions/pending.component';
-import { AdminDashboardComponent } from './admin _dashboard/admin-dashboard.component';
+import { LandOwnerRegistration } from "./land-registrar/actions/land-owner-reg.component";
+import { NewLandRecordComponent } from "./land-registrar/actions/new-land-record.component";
+import { InitiateTransferComponent } from './land-registrar/actions/initiate-transfer.component';
+import { ModifyLandRecordComponent } from './land-registrar/actions/modify-land-record.component';
+import { ApproveLandTransferComponent } from './land-registrar/actions/approve-land-transfer.component';
+import { RevenueDashboardComponent } from './revenue-authority/dashboard/revenue_dashboard.component';
+import { ApprovalsComponent } from './revenue-authority/actions/approvals.component';
+import { DeclinesComponent } from './revenue-authority/actions/declines.component';
+import { ActivityLogComponent } from './revenue-authority/actions/activity-log.component';
+import { PendingComponent } from './revenue-authority/actions/pending.component';
+import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
 //import services here
 import {
   AuthService,

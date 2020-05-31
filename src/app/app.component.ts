@@ -10,7 +10,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit{
-  pageTitle = "Land Management System";
+  pageTitle = "Land Registry";
   
   constructor( private auth:AuthService) {}
 

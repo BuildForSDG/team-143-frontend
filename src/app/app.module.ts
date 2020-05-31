@@ -4,11 +4,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from "./app.component";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./auth/login/login.component";
 import { NavbarComponent } from "./navigation/navbar.component";
-import { CheckinComponent } from "./checkin/checkin.component";
+import { CheckinComponent } from "./auth/checkin/checkin.component";
 import { RouterModule, } from "@angular/router";
-import { UserModule } from "./user/user.module";
+import { UserModule } from "./modules/user.module";
 import { AuthService, AlertsService } from './services';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';

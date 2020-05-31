@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup,FormBuilder,Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { AuthService, AlertsService } from "../services";
+import { AuthService, AlertsService } from "../../services";
 
 @Component({
   selector: "app-login",
@@ -41,10 +41,21 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(user.userName, user.password)
       .subscribe(
         response => {
-          console.log(response);
           if(response){
             localStorage.setItem('user',JSON.stringify(response));
-            this.router.navigate(["/checkin"]);
+            if(response['roles'].length > 1){ //user has more than one role
+              this.router.navigate(["/checkin"]);
+            }else{
+              if(response['roles'][0] == 1){ //Admin
+                this.router.navigate(["/admin"]);
+              }else if(response['roles'][0] == 2){ //Land Registrar
+                this.router.navigate(["/lands"]);
+              }else if(response['roles'][0] == 3){ //Revenue Authority
+                this.router.navigate(["/revenue"]);
+              }else if(response['roles'][0] == 4){ //Land Owner
+                this.router.navigate(["/owner"]);
+              }
+            }
           }else{
             this.alertsService.setAlert('error', 'Ooops! We encountered an error processing your request.');
           }

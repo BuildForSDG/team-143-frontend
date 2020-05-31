@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { IUser } from "../user/user.model";
+import { IUser } from "../models/user.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { of } from "rxjs";
 import { tap, catchError } from "rxjs/operators";
@@ -41,13 +41,13 @@ export class AuthService {
     return !!this.currentUser;
   }
 
-  updateCurrentUser (firstName: string, lastName: string) {
-    this.currentUser.firstName = firstName;
-    this.currentUser.lastName = lastName;
+  // updateCurrentUser (firstName: string, lastName: string) {
+  //   this.currentUser.firstName = firstName;
+  //   this.currentUser.lastName = lastName;
 
-    const options = { headers: new HttpHeaders({"Content-Type": "application/json"})};
-    return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options );
-  }
+  //   const options = { headers: new HttpHeaders({"Content-Type": "application/json"})};
+  //   return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options );
+  // }
   logout () {
     this.currentUser = undefined;
 
