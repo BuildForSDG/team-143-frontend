@@ -1,0 +1,24 @@
+.kt-aside{
+  height: 89vh;
+  float: left;
+}
+#kt-header{
+  position: absolute !important;
+  height: 65px !important;
+}
+.kt-menu_action {
+  font-size: 1.53rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-left: 30.5%;
+}
+  
+.kt-child{
+  float: right;
+ width: 80%;
+  margin: 2% 0 0 2%;
+}
+  fa-icon{
+    font-size:.1rem;
+  }
