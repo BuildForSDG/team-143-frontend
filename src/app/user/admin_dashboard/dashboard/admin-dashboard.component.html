@@ -1,0 +1,58 @@
+<div class="kt-quick-panel--right kt-demo-panel--right 
+            kt-offcanvas-panel--right kt-header--fixed 
+            kt-header-mobile--fixed kt-subheader--enabled
+             kt-subheader--transparent 
+              kt-page--loading clearfix
+             ">
+    <div class="row">
+        <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
+
+            <!-- end:: Aside -->
+    
+            <!-- begin:: Aside Menu -->
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+                <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1">
+                    <ul class="kt-menu__nav ">
+                        <li >
+                            <h2 class=" kt-menu_action ">Actions</h2>
+                        </li>
+                        <li routerLink="/admin/new_user" class="kt-menu__item " aria-haspopup="true">
+                            <a class="kt-menu__link ">
+                                <fa-icon [icon]="faPlus" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Create Account</span>
+                            </a>
+                        </li>
+                        <li routerLink="/admin/delete_user" class="kt-menu__item " aria-haspopup="true">
+                            <a class="kt-menu__link ">
+                                <fa-icon [icon]="faExchangeAlt" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Delete Users</span>
+                            </a>
+                        </li>
+                        <li routerLink="/admin/modify_user" class="kt-menu__item " aria-haspopup="true">
+                            <a  class="kt-menu__link ">
+                                <fa-icon [icon]="faCogs" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Modify Users</span>
+                            </a>
+                        </li>
+                        <li routerLink="/user" class="kt-menu__item " aria-haspopup="true">
+                            <a  class="kt-menu__link ">
+                                <fa-icon [icon]="faCogs" class="kt-menu__link-icon"></fa-icon>
+                                <span class="kt-menu__link-text">Return to Land Registry</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- end:: Aside Menu -->
+        </div>
+    <!-- end:: Aside -->
+        <div class="kt-child kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+</div>         
+    <!-- begin:: Aside -->
+
+    
