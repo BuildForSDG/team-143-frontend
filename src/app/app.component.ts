@@ -4,7 +4,7 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: "app-root",
   template: `
-  <app-navbar></app-navbar>
+  
   <router-outlet></router-outlet>
   `,
   styleUrls: ["./app.component.css"]
