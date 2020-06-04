@@ -31,6 +31,7 @@ import {
   LandOwnerAuthGuard,
   AdminAuthGuard
 } from '../guards';
+import { CheckinComponent } from '../auth/checkin/checkin.component';
 
 @NgModule({
   declarations: [ 
@@ -44,15 +45,21 @@ import {
     PendingComponent,
     DeclinesComponent,
     ApprovalsComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    CheckinComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
+      {
+        path: "user/checkin",
+        canActivate: [AuthGuard],
+        component: CheckinComponent
+      },
       { 
-        path: "user",
+        path: "user/lands",
         canActivate: [LandRegistryAuthGuard],
         component: LrDashboardComponent,
         children:[
@@ -64,7 +71,7 @@ import {
         ] 
       },
       { 
-        path: "revenue",
+        path: "user/revenue",
         canActivate: [RevenueAuthGuard],
         component: RevenueDashboardComponent,
         children:[
@@ -75,7 +82,7 @@ import {
         ] 
       },
       { 
-        path: "admin",
+        path: "user/admin",
         canActivate: [AdminAuthGuard],
         component: RevenueDashboardComponent,
         children:[

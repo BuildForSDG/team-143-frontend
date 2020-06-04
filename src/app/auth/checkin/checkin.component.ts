@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 
+import { faCogs } from "@fortawesome/free-solid-svg-icons";
+
 
 @Component({
   selector: "app-checkin",
   templateUrl: "./checkin.component.html",
-  styles: [`.row{
-    margin:5% 0 0 18%;
-  }`]
+  styleUrls:  ["./checkin.component.css"]
 })
 export class CheckinComponent implements OnInit {
-
+faCogs = faCogs;
 
   constructor() { }
 

@@ -6,7 +6,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { NavbarComponent } from "./navigation/navbar.component";
-import { CheckinComponent } from "./auth/checkin/checkin.component";
+
 import { RouterModule, } from "@angular/router";
 import { UsersModule } from "./users/users.module";
 import { AuthService, AlertsService } from './services';
@@ -21,7 +21,7 @@ import {
   declarations: [
     AppComponent,
     LoginComponent,
-    CheckinComponent,
+   
     NavbarComponent
   ],
   imports: [
@@ -30,7 +30,6 @@ import {
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: "login", canActivate: [LoginGuard], component: LoginComponent },
-      { path: "checkin" , component: CheckinComponent, canActivate: [AuthGuard]},
       { path: "", redirectTo: "login", pathMatch: "full"},
       { path: "**", redirectTo: "login", pathMatch: "full"},
       {path: "user", canActivate: [AuthGuard], loadChildren: "./users/users.module#UserModule"}
