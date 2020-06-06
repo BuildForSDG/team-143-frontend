@@ -22,9 +22,9 @@ export class AuthService {
       .pipe(tap(data => {
         this.currentUser = <IUser>data["user"];
       }))
-      // .pipe(catchError(err => {
-      //   return of(false);
-      // }));
+       .pipe(catchError(err => {
+         return of(false);
+       }));
   }
 
   getUserByAccessToken(userId: string, accessToken: string) {
@@ -41,13 +41,13 @@ export class AuthService {
     return !!this.currentUser;
   }
 
-  // updateCurrentUser (firstName: string, lastName: string) {
-  //   this.currentUser.firstName = firstName;
-  //   this.currentUser.lastName = lastName;
+ updateCurrentUser (firstName: string, lastName: string) {
+   this.currentUser.fullName = firstName;
+  
 
-  //   const options = { headers: new HttpHeaders({"Content-Type": "application/json"})};
-  //   return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options );
-  // }
+    const options = { headers: new HttpHeaders({"Content-Type": "application/json"})};
+    return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options );
+  }
   logout () {
     this.currentUser = undefined;
 

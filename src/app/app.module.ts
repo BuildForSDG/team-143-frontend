@@ -6,6 +6,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { NavbarComponent } from "./navigation/navbar.component";
+import { FooterComponent } from './navigation/footer.component';
 
 import { RouterModule, } from "@angular/router";
 import { UsersModule } from "./users/users.module";
@@ -17,11 +18,12 @@ import {
   AuthGuard,
   LoginGuard
 } from './guards';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-   
+    FooterComponent,
     NavbarComponent
   ],
   imports: [

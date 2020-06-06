@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  isFieldInvalid(field: string) { // {6}
+  isFieldInvalid(field: string) { 
     return (
       (!this.loginForm.get(field).valid && this.loginForm.get(field).touched) ||
       (this.loginForm.get(field).untouched && this.formSubmitAttempt)
@@ -45,15 +45,20 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('user',JSON.stringify(response));
             if(response['roles'].length > 1){ //user has more than one role
               this.router.navigate(["/checkin"]);
+              this.authService.isAuthenticated;
             }else{
               if(response['roles'][0] == 1){ //Admin
                 this.router.navigate(["/admin"]);
+                this.authService.isAuthenticated;
               }else if(response['roles'][0] == 2){ //Land Registrar
                 this.router.navigate(["/lands"]);
+                this.authService.isAuthenticated;
               }else if(response['roles'][0] == 3){ //Revenue Authority
                 this.router.navigate(["/revenue"]);
+                this.authService.isAuthenticated;
               }else if(response['roles'][0] == 4){ //Land Owner
                 this.router.navigate(["/owner"]);
+                this.authService.isAuthenticated;
               }
             }
           }else{

@@ -13,8 +13,6 @@ import { ModifyLandRecordComponent } from './land-registrar/actions/modify-land-
 import { ApproveLandTransferComponent } from './land-registrar/actions/approve-land-transfer.component';
 import { RevenueDashboardComponent } from './revenue-authority/dashboard/revenue_dashboard.component';
 import { ApprovalsComponent } from './revenue-authority/actions/approvals.component';
-import { DeclinesComponent } from './revenue-authority/actions/declines.component';
-import { ActivityLogComponent } from './revenue-authority/actions/activity-log.component';
 import { PendingComponent } from './revenue-authority/actions/pending.component';
 import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
 import { CheckinComponent } from '../auth/checkin/checkin.component';
@@ -44,7 +42,6 @@ import {
     ApproveLandTransferComponent,
     RevenueDashboardComponent,
     PendingComponent,
-    DeclinesComponent,
     ApprovalsComponent,
     AdminDashboardComponent,
     CheckinComponent
@@ -66,7 +63,7 @@ import {
         children:[
           {path:"registration", component:LandOwnerRegistration},
           {path:"new_record", component:NewLandRecordComponent},
-          {path:"transfer", component:InitiateTransferComponent},
+          {path:"initiate_transfer", component:InitiateTransferComponent},
           {path:"modify", component:ModifyLandRecordComponent},
           {path:"approve", component:ApproveLandTransferComponent}
         ] 
@@ -77,9 +74,7 @@ import {
         component: RevenueDashboardComponent,
         children:[
           {path:"pending", component:PendingComponent},
-          {path:"approvals", component:ApprovalsComponent},
-          {path:"declines", component:DeclinesComponent},
-          {path:"log", component:ActivityLogComponent}
+          {path:"logs", component:ApprovalsComponent},
         ] 
       },
       { 

@@ -11,6 +11,8 @@ import { Component } from "@angular/core";
         background-color: #ffffff;
         margin-bottom: 20px;
         border-radius: 4px;
+        margin-top: 1%;
+        min-height: calc(100vh - 255px);
     }
     `]
 })

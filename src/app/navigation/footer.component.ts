@@ -3,15 +3,17 @@ import {AuthService} from "../services/auth.service";
 
 
 @Component({
-    selector:"app-navbar",
-    templateUrl:"./navbar.component.html",
+    selector:"app-footer",
+    templateUrl:"./footer.component.html",
     styles:[`
-  
+  .lm-footer{
+      margin-top:75vh;
+  }
  
   `] 
 })
 
-export class NavbarComponent {
+export class FooterComponent {
    
 
     constructor( public auth:AuthService) {}
