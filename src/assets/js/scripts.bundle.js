@@ -7,7 +7,6 @@
 var KTApp = function() {
     /** @type {object} colors State colors **/
     var colors = {};
-
     var initTooltip = (el) => {
         // if(el){
             var skin = el.data('skin') ? 'tooltip-' + el.data('skin') : '';

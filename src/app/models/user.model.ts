@@ -12,3 +12,18 @@ export interface IUser {
     accessToken: string;
     address: {};
 }
+
+export interface User {
+    id: number;
+    fullName:string;
+    idNumber: number;
+    lastSeenOn: string;
+    password: string;
+    phoneNumber: string;
+    pic: string;
+    _id: string;
+    roles: [];
+    email: string;
+    accessToken: string;
+    address: {};
+}

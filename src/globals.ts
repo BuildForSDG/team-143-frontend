@@ -1,18 +1,22 @@
 import { Injectable } from "@angular/core";
+import { User } from "./app/models/user.model";
 
 @Injectable()
 export class Globals {
-	currentUser: any = {};
+	currentUser: User;
 	currentYear: any;
     constructor() {
     	this.currentUser = JSON.parse(localStorage.getItem('user'));
 		this.currentYear = new Date();
     }
+    ngOnInit(): void {
+        console.log('in')
+      }
 
     //This is a duplicate of the constructor above.
     //It fixes issues where a component is loaded without refreshing a page.
-    reset() {
-    	this.currentUser = JSON.parse(localStorage.getItem('user'));
-		this.currentYear = new Date();
+    init() {
+        this.currentUser = JSON.parse(localStorage.getItem('user'));
+        this.currentYear = new Date();
     }
 }
