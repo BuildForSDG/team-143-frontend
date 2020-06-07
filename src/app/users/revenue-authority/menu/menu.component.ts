@@ -8,7 +8,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { Globals } from "../../../../globals";
 
 @Component({
-  selector: 'app-lr-menu',
+  selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })

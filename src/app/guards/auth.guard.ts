@@ -72,7 +72,7 @@ export class RevenueAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(this.globals.currentUser.roles.includes(3));
+                        observer.next(currentUser.roles.includes(3));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
@@ -112,7 +112,7 @@ export class LandRegistryAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(this.globals.currentUser.roles.includes(2));
+                        observer.next(currentUser.roles.includes(2));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
@@ -152,7 +152,7 @@ export class LandOwnerAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(this.globals.currentUser.roles.includes(4));
+                        observer.next(currentUser.roles.includes(4));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
@@ -192,7 +192,7 @@ export class AdminAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(this.globals.currentUser.roles.includes(1));
+                        observer.next(currentUser.roles.includes(1));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
