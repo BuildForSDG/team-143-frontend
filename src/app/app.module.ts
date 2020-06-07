@@ -16,7 +16,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   AuthGuard,
-  LoginGuard
 } from './guards';
 
 @NgModule({
@@ -31,7 +30,7 @@ import {
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "login", canActivate: [LoginGuard], component: LoginComponent },
+      { path: "login", component: LoginComponent },
       { path: "", redirectTo: "login", pathMatch: "full"},
       { path: "**", redirectTo: "login", pathMatch: "full"},
       {path: "user", canActivate: [AuthGuard], loadChildren: "./users/users.module#UserModule"}
@@ -48,7 +47,6 @@ import {
   providers: [
     AuthService,
     AuthGuard,
-    LoginGuard,
     AlertsService
   ],
   bootstrap: [AppComponent]

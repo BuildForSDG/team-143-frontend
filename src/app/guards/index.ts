@@ -5,5 +5,4 @@ export {
 	LandRegistryAuthGuard, 
 	LandOwnerAuthGuard, 
 	AdminAuthGuard,
-	LoginGuard,
 } from './auth.guard';

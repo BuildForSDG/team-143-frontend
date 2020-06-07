@@ -6,21 +6,6 @@ import {Observable, Observer} from 'rxjs';
 import { Globals } from "../../globals";
 
 @Injectable()
-export class LoginGuard implements CanActivate {
-    constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService, public globals: Globals) { }
-    canActivate(): boolean  {
-        return true;
-        // const currentUser = JSON.parse(localStorage.getItem('user'));
-        // if(currentUser){
-        //     this.router.navigate(["checkin"]);
-        //     return false;
-        // }else{
-        //     return true;
-        // }
-    }
-}
-
-@Injectable()
 export class AuthGuard implements CanActivate {
     constructor(private router: Router, private authService: AuthService, public globals: Globals) { }
     canActivate(): Observable<boolean>  {
