@@ -16,81 +16,76 @@
                     </div>
                     <div class="kt-portlet__body">
                         <div class="lm-container">
-                            <div class="lm-card">
-                                <div class="box box1">
-                                    <div class="content">
-                                        <h3>Land Registry</h3>
+                            <!-- <div class="lm-card"> -->
+                            <div class="lm-card" *ngFor="let role of globals.currentUser.roles; index as i;">
+                                <div *ngIf="role==1">
+                                    <div class="box box1">
+                                        <div class="content">
+                                            <h3>Administrator</h3>
+                                        </div>
+                                    </div>
+                                    <div class="box box2">
+                                        <div class="content">
+                                            <p>Lorem ipsum dolor sit amet 
+                                                consectetur adipisicing elit. 
+                                                Quas cum cumque minus iste veritatis provident at.</p>
+                                                <a [routerLink]="['/admin']">Visit</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="box box2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet 
-                                            consectetur adipisicing elit. 
-                                            Quas cum cumque minus iste veritatis provident at.</p>
-                                            <a [routerLink]="['/lands']">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                            <div class="lm-card">
-                                <div class="box box1">
-                                    <div class="content">
-                                        <h3>Revenue Authority</h3>
-                                    </div>
-                                </div>
-                                <div class="box box2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet 
-                                            consectetur adipisicing elit. 
-                                            Quas cum cumque minus iste veritatis provident at.</p>
-                                            <a [routerLink]="['/revenue']">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                            <div class="lm-card">
-                                <div class="box box1">
-                                    <div class="content">
-                                        <h3>Land Owner</h3>
-                                    </div>
-                                </div>
-                                <div class="box box2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet 
-                                            consectetur adipisicing elit. 
-                                            Quas cum cumque minus iste veritatis provident at.</p>
-                                            <a [routerLink]="['/land-owner']">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                            <div class="lm-card">
-                                <div class="box box1">
-                                    <div class="content">
-                                        <h3>Administrator</h3>
-                                    </div>
-                                </div>
-                                <div class="box box2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet 
-                                            consectetur adipisicing elit. 
-                                            Quas cum cumque minus iste veritatis provident at.</p>
-                                            <a [routerLink]="['/admin']">Visit</a>
-                                    </div>
-                                </div>
-                            </div>
 
+                                <div *ngIf="role==2">
+                                    <div class="box box1">
+                                        <div class="content">
+                                            <h3>Land Registry</h3>
+                                        </div>
+                                    </div>
+                                    <div class="box box2">
+                                        <div class="content">
+                                            <p>Lorem ipsum dolor sit amet 
+                                                consectetur adipisicing elit. 
+                                                Quas cum cumque minus iste veritatis provident at.</p>
+                                                <a [routerLink]="['/lands']">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="role==3">
+                                    <div class="box box1">
+                                        <div class="content">
+                                            <h3>Revenue Authority</h3>
+                                        </div>
+                                    </div>
+                                    <div class="box box2">
+                                        <div class="content">
+                                            <p>Lorem ipsum dolor sit amet 
+                                                consectetur adipisicing elit. 
+                                                Quas cum cumque minus iste veritatis provident at.</p>
+                                                <a [routerLink]="['/admin']">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="role==4">
+                                    <div class="box box1">
+                                        <div class="content">
+                                            <h3>Land Owner</h3>
+                                        </div>
+                                    </div>
+                                    <div class="box box2">
+                                        <div class="content">
+                                            <p>Lorem ipsum dolor sit amet 
+                                                consectetur adipisicing elit. 
+                                                Quas cum cumque minus iste veritatis provident at.</p>
+                                                <a [routerLink]="['/land-owner']">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
                     </div>
-                    
                 </div>
             </div>
-             
-             
         </div>
     </div>
 </div>

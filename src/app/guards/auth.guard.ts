@@ -3,24 +3,26 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, ActivatedRoute,NavigationEnd } from '@angular/router';
 import { AuthService } from "../services";
 import {Observable, Observer} from 'rxjs';
+import { Globals } from "../../globals";
 
 @Injectable()
 export class LoginGuard implements CanActivate {
-    constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService) { }
+    constructor(private router: Router, private route:ActivatedRoute, private authService: AuthService, public globals: Globals) { }
     canActivate(): boolean  {
-        const currentUser = JSON.parse(localStorage.getItem('user'));
-        if(currentUser){
-            this.router.navigate(["checkin"]);
-            return false;
-        }else{
-            return true;
-        }
+        return true;
+        // const currentUser = JSON.parse(localStorage.getItem('user'));
+        // if(currentUser){
+        //     this.router.navigate(["checkin"]);
+        //     return false;
+        // }else{
+        //     return true;
+        // }
     }
 }
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-    constructor(private router: Router, private authService: AuthService) { }
+    constructor(private router: Router, private authService: AuthService, public globals: Globals) { }
     canActivate(): Observable<boolean>  {
         return Observable.create((observer: Observer<boolean>) => {
             const currentUser = JSON.parse(localStorage.getItem('user'));
@@ -59,7 +61,7 @@ export class AuthGuard implements CanActivate {
 
 @Injectable()
 export class RevenueAuthGuard implements CanActivate {
-    constructor(private router: Router, private authService: AuthService) { }
+    constructor(private router: Router, private authService: AuthService, public globals: Globals) { }
     //add check role
     canActivate(): Observable<boolean>  {
         return Observable.create((observer: Observer<boolean>) => {
@@ -70,7 +72,7 @@ export class RevenueAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(true)
+                        observer.next(this.globals.currentUser.roles.includes(3));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
@@ -99,7 +101,7 @@ export class RevenueAuthGuard implements CanActivate {
 
 @Injectable()
 export class LandRegistryAuthGuard implements CanActivate {
-    constructor(private router: Router, private authService: AuthService) { }
+    constructor(private router: Router, private authService: AuthService, public globals: Globals) { }
     //add check role
     canActivate(): Observable<boolean>  {
         return Observable.create((observer: Observer<boolean>) => {
@@ -110,7 +112,7 @@ export class LandRegistryAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(true)
+                        observer.next(this.globals.currentUser.roles.includes(2));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
@@ -139,7 +141,7 @@ export class LandRegistryAuthGuard implements CanActivate {
 
 @Injectable()
 export class LandOwnerAuthGuard implements CanActivate {
-    constructor(private router: Router, private authService: AuthService) { }
+    constructor(private router: Router, private authService: AuthService, public globals: Globals) { }
     //add check role
     canActivate(): Observable<boolean>  {
         return Observable.create((observer: Observer<boolean>) => {
@@ -150,7 +152,7 @@ export class LandOwnerAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(true)
+                        observer.next(this.globals.currentUser.roles.includes(4));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
@@ -179,7 +181,7 @@ export class LandOwnerAuthGuard implements CanActivate {
 
 @Injectable()
 export class AdminAuthGuard implements CanActivate {
-    constructor(private router: Router, private authService: AuthService) { }
+    constructor(private router: Router, private authService: AuthService, public globals: Globals) { }
     //add check role
     canActivate(): Observable<boolean>  {
         return Observable.create((observer: Observer<boolean>) => {
@@ -190,7 +192,7 @@ export class AdminAuthGuard implements CanActivate {
                   .subscribe(
                     response => {
                       if(response){
-                        observer.next(true)
+                        observer.next(this.globals.currentUser.roles.includes(1));
                         observer.complete()
                       }else{
                         localStorage.removeItem('user');
