@@ -23,7 +23,6 @@ export class LrDashboardComponent implements OnInit {
   constructor(public globals: Globals) { }
 
   ngOnInit(): void {
-    console.log(this.globals.currentUser.fullName)
   }
 
 }

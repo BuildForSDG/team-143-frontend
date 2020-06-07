@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
+import { Globals } from "../../../globals";
 
 
 @Component({
@@ -11,7 +11,7 @@ import { faCogs } from "@fortawesome/free-solid-svg-icons";
 export class CheckinComponent implements OnInit {
 faCogs = faCogs;
 
-  constructor() { }
+  constructor(public globals: Globals) { }
 
   ngOnInit(): void {
 
