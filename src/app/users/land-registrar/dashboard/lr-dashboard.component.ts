@@ -5,7 +5,7 @@ import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import { Globals } from "../../../../globals";
 
 @Component({
   selector: 'app-lr-dashboard',
@@ -20,9 +20,10 @@ export class LrDashboardComponent implements OnInit {
   faCogs = faCogs;
   faCheck = faCheck;
 
-  constructor() { }
+  constructor(public globals: Globals) { }
 
   ngOnInit(): void {
+    console.log(this.globals.currentUser.fullName)
   }
 
 }

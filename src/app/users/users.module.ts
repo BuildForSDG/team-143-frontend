@@ -16,6 +16,8 @@ import { ApprovalsComponent } from './revenue-authority/actions/approvals.compon
 import { PendingComponent } from './revenue-authority/actions/pending.component';
 import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
 import { CheckinComponent } from '../auth/checkin/checkin.component';
+import { Globals } from "../../globals";
+
 //import services here
 import {
   AuthService,
@@ -89,6 +91,7 @@ import {
     FontAwesomeModule
   ],
   providers: [
+    Globals,
     LandRegistryAuthGuard,
     RevenueAuthGuard,
     AdminAuthGuard
