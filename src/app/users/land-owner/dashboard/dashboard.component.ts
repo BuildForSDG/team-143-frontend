@@ -7,13 +7,12 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-
 @Component({
-  selector: 'lms-admin',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-lr-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class AdminDashboardComponent implements OnInit {
+export class LandOwnerDashboardComponent implements OnInit {
   faUserPlus = faUserPlus;
   faPlus = faPlus;
   faExchangeAlt = faExchangeAlt;

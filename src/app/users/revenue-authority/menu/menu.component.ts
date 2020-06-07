@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons"; 
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import { Globals } from "../../../../globals";
 
 @Component({
-  selector: 'lms-admin',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-lr-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class AdminDashboardComponent implements OnInit {
+export class RevenueMenuComponent implements OnInit {
   faUserPlus = faUserPlus;
   faPlus = faPlus;
   faExchangeAlt = faExchangeAlt;
@@ -21,7 +20,7 @@ export class AdminDashboardComponent implements OnInit {
   faCogs = faCogs;
   faCheck = faCheck;
 
-  constructor() { }
+  constructor(public globals: Globals) { }
 
   ngOnInit(): void {
   }

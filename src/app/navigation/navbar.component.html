@@ -564,7 +564,7 @@
 <router-outlet></router-outlet>
 
  <!-- begin:: Footer -->
- <div *ngIf="auth.isAuthenticated()" class="kt-footer kt-footer--extended  kt-grid__item lm-footer" id="kt_footer">
+ <div *ngIf="globals.currentUser" class="kt-footer kt-footer--extended  kt-grid__item lm-footer" id="kt_footer">
     <div class="kt-footer__bottom">
         <div class="kt-container ">
             <div class="kt-footer__wrapper">
@@ -573,7 +573,7 @@
                         <img alt="Logo" src="./assets/media/logos/logo-2-sm.png">
                     </a>
                     <div class="kt-footer__copyright">
-                        2020&nbsp;&copy;&nbsp;
+                        {{globals.currentYear}}&nbsp;&copy;&nbsp;
                         <a href="#" target="_blank">Team 143</a>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ export class Globals {
 	currentYear: any;
     constructor() {
     	this.currentUser = JSON.parse(localStorage.getItem('user'));
-		this.currentYear = new Date();
+		this.currentYear = new Date().getFullYear();
     }
     ngOnInit(): void {
         console.log('in')
@@ -17,6 +17,6 @@ export class Globals {
     //It fixes issues where a component is loaded without refreshing a page.
     init() {
         this.currentUser = JSON.parse(localStorage.getItem('user'));
-        this.currentYear = new Date();
+        this.currentYear = new Date().getFullYear();
     }
 }

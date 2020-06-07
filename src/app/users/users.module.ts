@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LrDashboardComponent } from './land-registrar/dashboard/lr-dashboard.component';
+import { LrMenuComponent } from './land-registrar/menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { LandOwnerRegistration } from "./land-registrar/actions/land-owner-reg.component";
@@ -12,9 +13,13 @@ import { InitiateTransferComponent } from './land-registrar/actions/initiate-tra
 import { ModifyLandRecordComponent } from './land-registrar/actions/modify-land-record.component';
 import { ApproveLandTransferComponent } from './land-registrar/actions/approve-land-transfer.component';
 import { RevenueDashboardComponent } from './revenue-authority/dashboard/revenue_dashboard.component';
+import { RevenueMenuComponent } from './revenue-authority/menu/menu.component';
 import { ApprovalsComponent } from './revenue-authority/actions/approvals.component';
 import { PendingComponent } from './revenue-authority/actions/pending.component';
 import { AdminDashboardComponent } from './admin/dashboard/admin-dashboard.component';
+import { AdminMenuComponent } from './admin/menu/menu.component';
+import { LandOwnerMenuComponent } from './land-owner/menu/menu.component';
+import { LandOwnerDashboardComponent } from './land-owner/dashboard/dashboard.component';
 import { CheckinComponent } from '../auth/checkin/checkin.component';
 import { Globals } from "../../globals";
 
@@ -37,12 +42,17 @@ import {
 @NgModule({
   declarations: [ 
     LrDashboardComponent,
+    LrMenuComponent,
     LandOwnerRegistration,
     NewLandRecordComponent,
     InitiateTransferComponent,
+    LandOwnerDashboardComponent,
     ModifyLandRecordComponent,
     ApproveLandTransferComponent,
     RevenueDashboardComponent,
+    RevenueMenuComponent,
+    LandOwnerMenuComponent,
+    AdminMenuComponent,
     PendingComponent,
     ApprovalsComponent,
     AdminDashboardComponent,
@@ -61,8 +71,10 @@ import {
       { 
         path: "lands",
         canActivate: [LandRegistryAuthGuard],
-        component: LrDashboardComponent,
+        component: LrMenuComponent,
         children:[
+          {path:"", component:LrDashboardComponent},
+          {path:"dashboard", component:LrDashboardComponent},
           {path:"registration", component:LandOwnerRegistration},
           {path:"new_record", component:NewLandRecordComponent},
           {path:"initiate_transfer", component:InitiateTransferComponent},
@@ -73,8 +85,10 @@ import {
       { 
         path: "revenue",
         canActivate: [RevenueAuthGuard],
-        component: RevenueDashboardComponent,
+        component: RevenueMenuComponent,
         children:[
+          {path:"", component:RevenueDashboardComponent},
+          {path:"dashboard", component:RevenueDashboardComponent},
           {path:"pending", component:PendingComponent},
           {path:"logs", component:ApprovalsComponent},
         ] 
@@ -82,9 +96,19 @@ import {
       { 
         path: "admin",
         canActivate: [AdminAuthGuard],
-        component: RevenueDashboardComponent,
+        component: AdminMenuComponent,
         children:[
-          {path:"admin", component:AdminDashboardComponent}
+          {path:"", component:AdminDashboardComponent},
+          {path:"dashboard", component:AdminDashboardComponent}
+        ] 
+      },
+      { 
+        path: "land-owner",
+        canActivate: [LandOwnerAuthGuard],
+        component: LandOwnerMenuComponent,
+        children:[
+          {path:"", component:LandOwnerDashboardComponent},
+          {path:"dashboard", component:LandOwnerDashboardComponent}
         ] 
       }
     ]),
@@ -94,6 +118,7 @@ import {
     Globals,
     LandRegistryAuthGuard,
     RevenueAuthGuard,
+    LandOwnerAuthGuard,
     AdminAuthGuard
   ]
 })

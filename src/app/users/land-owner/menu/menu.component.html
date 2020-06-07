@@ -1,0 +1,41 @@
+<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " data-ktheader-minimize="on">
+    <div class="kt-header__bottom">
+        <div class="kt-container ">
+    
+            <!-- begin: Header Menu -->
+            <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+            <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
+                <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile ">
+                    <ul class="kt-menu__nav ">
+                        <li routerLink="checkin" class="kt-menu__item  kt-menu__item--open kt-menu__item--here kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open kt-menu__item--here" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Dashboard</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                        </li>
+                        <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a  class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">My Land Records</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                        </li>
+
+                        <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a  class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Land Transfers</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                            <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
+                                <ul class="kt-menu__subnav">
+                                    <li routerLink="search" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
+                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                        <span class="kt-menu__link-text">Pending Approval</span></a></li>
+                                    <li routerLink="new_record" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
+                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                        <span class="kt-menu__link-text">Approved</span></a></li>
+                                        <li routerLink="new_record" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
+                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                        <span class="kt-menu__link-text">Declined</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end: Header Menu -->
+        </div>
+    </div>
+</div>
+
+<div class="kt-child kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <router-outlet></router-outlet>
+</div>
+              
