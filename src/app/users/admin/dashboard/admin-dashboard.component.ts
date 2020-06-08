@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons"; 
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faCogs } from "@fortawesome/free-solid-svg-icons";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import {faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
+
+import { Globals } from "../../../../globals";
 
 
 @Component({
@@ -14,14 +11,9 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  faUserPlus = faUserPlus;
-  faPlus = faPlus;
-  faExchangeAlt = faExchangeAlt;
-  faSearch = faSearch;
-  faCogs = faCogs;
-  faCheck = faCheck;
+ faCalendarAlt = faCalendarAlt;
 
-  constructor() { }
+  constructor(public globals:Globals ) {}
 
   ngOnInit(): void {
   }

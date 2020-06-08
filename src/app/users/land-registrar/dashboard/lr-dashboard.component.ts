@@ -12,35 +12,29 @@ import { User } from 'src/app/models/user.model';
 export class LrDashboardComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;
   
-  role;
+  Roles;
  
 
   constructor(public globals: Globals) { }
 
   ngOnInit(): void {
-    this.getRoles();
+    this.Roles = this.globals.currentUser.roles.map(role => {
+        if(role == "1"){
+          return 'Administrator'
+        }
+        if(role == "2"){
+          return  'Land Registrar'
+        }
+        if(role == "3"){
+          return 'Land Revenue Agent'
+        }
+        if(role == "4"){
+          return  'Land Owner'
+        }
+      });
+      console.log(this.Roles);
+
+  }
   
-  }
-
-  getRoles(){
-    let roles = this.globals.currentUser.roles;
-    
-    roles.forEach( (value,index,array) => {
-      if(array[value] === "1"){
-        return 'Administrator'
-        
-      }
-      if(array[value] === "2"){
-        return 'Land Registrar'
-      }
-      if(array[value] === "3"){
-        return 'Land Revenue Agent'
-      }
-      if(array[value] === "4"){
-        return 'Land Owner'
-      }
-    });
-
-  }
-
 }
+

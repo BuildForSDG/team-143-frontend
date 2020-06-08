@@ -4,10 +4,12 @@ import { User } from "./app/models/user.model";
 @Injectable()
 export class Globals {
 	currentUser: User;
-	currentYear: any;
+  currentYear: any;
+  today:any;
     constructor() {
     	this.currentUser = JSON.parse(localStorage.getItem('user'));
-		this.currentYear = new Date().getFullYear();
+      this.currentYear = new Date().getFullYear();
+      this.today = new Date();
     }
     ngOnInit(): void {
         console.log('in')
@@ -18,5 +20,6 @@ export class Globals {
     init() {
         this.currentUser = JSON.parse(localStorage.getItem('user'));
         this.currentYear = new Date().getFullYear();
+        this.today = new Date();
     }
 }
