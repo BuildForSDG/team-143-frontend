@@ -37,6 +37,9 @@ import {
   LandOwnerAuthGuard,
   AdminAuthGuard
 } from '../guards';
+import { DeclinesComponent } from './revenue-authority/actions/declines.component';
+import { CreateNewComponent } from './admin/actions/create-new.component';
+import { SearchUserComponent } from './admin/actions/search-user.component';
 
 
 @NgModule({
@@ -56,7 +59,10 @@ import {
     PendingComponent,
     ApprovalsComponent,
     AdminDashboardComponent,
-    CheckinComponent
+    CheckinComponent,
+    DeclinesComponent,
+    CreateNewComponent,
+    SearchUserComponent
   ],
   imports: [
     CommonModule,
@@ -90,7 +96,8 @@ import {
           {path:"", component:RevenueDashboardComponent},
           {path:"dashboard", component:RevenueDashboardComponent},
           {path:"pending", component:PendingComponent},
-          {path:"logs", component:ApprovalsComponent},
+          {path:"approvals", component:ApprovalsComponent},
+          {path:"declines", component:DeclinesComponent},
         ] 
       },
       { 
@@ -99,7 +106,9 @@ import {
         component: AdminMenuComponent,
         children:[
           {path:"", component:AdminDashboardComponent},
-          {path:"dashboard", component:AdminDashboardComponent}
+          {path:"dashboard", component:AdminDashboardComponent},
+          {path:"create-new", component:CreateNewComponent},
+          {path:"search-user", component:SearchUserComponent}
         ] 
       },
       { 

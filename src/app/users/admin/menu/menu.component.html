@@ -471,7 +471,7 @@
                 <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_21.jpg">
 
                 <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden-">S</span>
+                <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden-">{{globals.currentUser.fullName.charAt(0)}}</span>
             </div>
             <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
                 <!--begin: Head -->
@@ -480,7 +480,7 @@
                         <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_25.jpg" />
 
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                        <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
+                        <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">{{globals.currentUser.fullName.charAt(0)}}</span>
                     </div>
                     <div class="kt-user-card__name">
                         {{globals.currentUser.fullName}}
@@ -531,10 +531,10 @@
                         <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a  class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Users</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                             <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                                 <ul class="kt-menu__subnav">
-                                    <li routerLink="search" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
+                                    <li routerLink="search-user" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
                                         <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                         <span class="kt-menu__link-text">Search User</span></a></li>
-                                    <li routerLink="new_record" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
+                                    <li routerLink="create-new" class="kt-menu__item " aria-haspopup="true"><a  class="kt-menu__link ">
                                         <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
                                         <span class="kt-menu__link-text">Create New User</span></a></li>
                                 </ul>

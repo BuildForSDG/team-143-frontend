@@ -12,7 +12,7 @@
                         <a href="#" class="btn kt-subheader__btn-daterange" id="kt_dashboard_daterangepicker" data-toggle="kt-tooltip" title="Select dashboard daterange" data-placement="left">
                             <fa-icon [icon]="faCalendarAlt"></fa-icon>&nbsp;
                             <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title"> Today</span>&nbsp;
-                            <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date"> Aug 16</span>
+                            <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">{{globals.today |date:'medium'}}</span>
                             
                         </a>
                     </div>
@@ -50,14 +50,11 @@
 																{{globals.currentUser.fullName}}
 																<i class="flaticon2-correct kt-font-success"></i>
 															</a>
-															<span  class="kt-widget__subtitle">
-																{{globals.currentUser.roles}}
+															<span *ngFor="let role of Roles" class="kt-widget__subtitle">
+																{{role}}
 															</span>
 														</div>
-														<div class="kt-widget__action">
-															<button type="button" class="btn btn-info btn-sm">chat</button>&nbsp;
-															<button type="button" class="btn btn-success btn-sm">follow</button>
-														</div>
+														
 													</div>
 												</div>
 												<div class="kt-widget__body">
@@ -82,10 +79,7 @@
 															<span class="kt-widget__label">Mailbox:</span>
 															<span class="kt-widget__data">{{globals.currentUser.address.mailbox}}</span>
                                                         </div>
-                                                        <div class="kt-widget__info">
-															<span class="kt-widget__label">Blockchain Key:</span>
-															<span class="kt-widget__data">{{globals.currentUser.blockChainKey}}</span>
-														</div>
+                                                        
 													</div>
 													<div class="kt-widget__items">
 													</div>

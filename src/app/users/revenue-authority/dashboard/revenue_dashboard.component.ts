@@ -14,11 +14,25 @@ import { Globals } from 'src/globals';
 })
 export class RevenueDashboardComponent implements OnInit {
 faCalendarAlt=faCalendarAlt;
-  
+  Roles;
 
   constructor(public globals:Globals) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.Roles = this.globals.currentUser.roles.map(role => {
+      if(role == "1"){
+        return 'Administrator'
+      }
+      if(role == "2"){
+        return  'Land Registrar'
+      }
+      if(role == "3"){
+        return 'Land Revenue Agent'
+      }
+      if(role == "4"){
+        return  'Land Owner'
+      }
+    });
   }
 
 }

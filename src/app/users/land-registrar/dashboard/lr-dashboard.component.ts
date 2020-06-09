@@ -17,7 +17,7 @@ export class LrDashboardComponent implements OnInit {
 
   constructor(public globals: Globals) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.Roles = this.globals.currentUser.roles.map(role => {
         if(role == "1"){
           return 'Administrator'
@@ -32,7 +32,7 @@ export class LrDashboardComponent implements OnInit {
           return  'Land Owner'
         }
       });
-      console.log(this.Roles);
+     
 
   }
   
