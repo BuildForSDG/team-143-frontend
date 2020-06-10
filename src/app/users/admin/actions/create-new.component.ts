@@ -1,4 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup,FormBuilder,Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { AuthService, AlertsService } from 'src/app/services';
+import { Globals } from 'src/globals';
 
 @Component({
     selector:"lms-create-new",
@@ -18,4 +25,39 @@ import { Component } from "@angular/core";
     `]
 })
 
-export class CreateNewComponent {}
+export class CreateNewComponent implements OnInit {
+    fullName;
+    email;
+    username;
+    password;
+    notification;
+    role;
+    faUser=faUser;
+    newUserForm: FormGroup;
+    private formSubmitAttempt: boolean;
+
+    constructor( 
+        private router:Router,
+        private fb:FormBuilder,
+        private authService:AuthService,
+        private alertsService:AlertsService,
+        public globals:Globals) {}
+
+        ngOnInit(){
+            this.newUserForm = this.fb.group({
+                fullName:['', Validators.required],
+                email:['', Validators.required],
+                username:['', Validators.required],
+                password:['', Validators.required],
+                notification:['', Validators.required],
+                role:['', Validators.required],
+
+            })
+        }
+
+        save(data) {
+            console.log(data);
+        }
+
+
+}

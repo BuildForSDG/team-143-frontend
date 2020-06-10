@@ -1,4 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup,FormBuilder,Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { AuthService, AlertsService } from 'src/app/services';
+import { Globals } from 'src/globals';
 
 @Component({
     templateUrl: "./new-land-record.component.html",
@@ -17,4 +24,31 @@ import { Component } from "@angular/core";
     `]
 })
 
-export class NewLandRecordComponent {}
+export class NewLandRecordComponent implements OnInit {
+    lrNumber;
+    coordinates;
+    idNumber;
+    titleDeed;
+    newLandRecordForm: FormGroup;
+
+    constructor (
+        private authService:AuthService,
+        private alertsService:AlertsService,
+        private fb:FormBuilder,
+        private globals:Globals,
+        private router:Router
+    ) {}
+
+    ngOnInit(){
+        this.newLandRecordForm = this.fb.group({
+            lrNumber:["",Validators.required],
+            coordinates:["",Validators.required],
+            idNumber:["",Validators.required],
+            titleDeed:["",Validators.required],
+        })
+    }
+
+    save(data){
+        console.log(data);
+    }
+}

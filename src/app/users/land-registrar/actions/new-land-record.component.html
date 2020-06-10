@@ -9,7 +9,7 @@
     </div>
 
     <!--begin::Form-->
-    <form class="kt-form">
+    <form [formGroup]="newLandRecordForm" (ngSubmit)="save(newLandRecordForm.value)" class="kt-form">
         <div class="kt-portlet__body">
             <div class="kt-section kt-section--first">
                 
@@ -17,14 +17,14 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">LR Number:</label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" placeholder="Enter LR Number">
+                            <input type="text" class="form-control" placeholder="Enter LR Number" formControlName="lrNumber">
                             <span class="form-text text-muted">Please enter the LR Number</span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Land Coordinates:</label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" placeholder="Eg -11.12345, -111.212121">
+                            <input type="text" class="form-control" placeholder="Eg -11.12345, -111.212121" formControlName="coordinates">
                             <span class="form-text text-muted">Please enter as "Xcoord,Ycoord"</span>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Owner ID Number:</label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" placeholder="Eg 12345678">
+                            <input type="text" class="form-control" placeholder="Eg 12345678" formControlName="idNumber">
                             <span class="form-text text-muted">Please enter ID Number</span>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     
                         <div class="col-md-6">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                                <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required formControlName="titleDeed">
                                 <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file...</label>
                               </div>
                         </div>
@@ -57,8 +57,8 @@
                 <div class="row">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
-                        <button type="reset" class="btn btn-brand">Submit</button>
-                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        
                     </div>
                 </div>
             </div>

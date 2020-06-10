@@ -7,7 +7,7 @@ import { LrDashboardComponent } from './land-registrar/dashboard/lr-dashboard.co
 import { LrMenuComponent } from './land-registrar/menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { LandOwnerRegistration } from "./land-registrar/actions/land-owner-reg.component";
+import { LandOwnerRegistrationComponent } from "./land-registrar/actions/land-owner-reg.component";
 import { NewLandRecordComponent } from "./land-registrar/actions/new-land-record.component";
 import { InitiateTransferComponent } from './land-registrar/actions/initiate-transfer.component';
 import { ModifyLandRecordComponent } from './land-registrar/actions/modify-land-record.component';
@@ -40,13 +40,16 @@ import {
 import { DeclinesComponent } from './revenue-authority/actions/declines.component';
 import { CreateNewComponent } from './admin/actions/create-new.component';
 import { SearchUserComponent } from './admin/actions/search-user.component';
+import { ApprovedComponent } from './land-owner/actions/approved.component';
+import { DeclinedComponent } from './land-owner/actions/declined.component';
+import { PendingOwnerComponent } from './land-owner/actions/pending.component';
 
 
 @NgModule({
   declarations: [ 
     LrDashboardComponent,
     LrMenuComponent,
-    LandOwnerRegistration,
+    LandOwnerRegistrationComponent,
     NewLandRecordComponent,
     InitiateTransferComponent,
     LandOwnerDashboardComponent,
@@ -62,7 +65,10 @@ import { SearchUserComponent } from './admin/actions/search-user.component';
     CheckinComponent,
     DeclinesComponent,
     CreateNewComponent,
-    SearchUserComponent
+    SearchUserComponent,
+    ApprovedComponent,
+    DeclinedComponent,
+    PendingOwnerComponent
   ],
   imports: [
     CommonModule,
@@ -81,7 +87,7 @@ import { SearchUserComponent } from './admin/actions/search-user.component';
         children:[
           {path:"", component:LrDashboardComponent},
           {path:"dashboard", component:LrDashboardComponent},
-          {path:"registration", component:LandOwnerRegistration},
+          {path:"registration", component:LandOwnerRegistrationComponent},
           {path:"new_record", component:NewLandRecordComponent},
           {path:"initiate_transfer", component:InitiateTransferComponent},
           {path:"modify", component:ModifyLandRecordComponent},
@@ -117,7 +123,10 @@ import { SearchUserComponent } from './admin/actions/search-user.component';
         component: LandOwnerMenuComponent,
         children:[
           {path:"", component:LandOwnerDashboardComponent},
-          {path:"dashboard", component:LandOwnerDashboardComponent}
+          {path:"dashboard", component:LandOwnerDashboardComponent},
+          {path:"pending", component:PendingOwnerComponent},
+          {path:"approved", component:ApprovedComponent},
+          {path:"declined", component:DeclinedComponent}
         ] 
       }
     ]),
