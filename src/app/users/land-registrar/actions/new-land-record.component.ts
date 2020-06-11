@@ -30,6 +30,8 @@ export class NewLandRecordComponent implements OnInit {
     idNumber;
     titleDeed;
     newLandRecordForm: FormGroup;
+    submitted = false;
+    
 
     constructor (
         private authService:AuthService,
@@ -47,8 +49,20 @@ export class NewLandRecordComponent implements OnInit {
             titleDeed:["",Validators.required],
         })
     }
+    
+    get f() {
+        return this.newLandRecordForm.controls;
+    }
 
     save(data){
+        this.submitted = true;
+
+        if (this.newLandRecordForm.invalid) {
+            return;
+        }
+
         console.log(data);
+        alert('SUCCESS!!');
+         
     }
 }

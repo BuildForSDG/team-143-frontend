@@ -11,6 +11,14 @@ import { Globals } from 'src/globals';
     selector:"lms-create-new",
     templateUrl: "./create-new.component.html",
     styles:[`
+    .is-invalid{
+        border:1px solid red;
+       
+    }
+    .invalid-feedback{
+        font-size:x-small;
+        color:red;
+    }
     .kt-portlet {
         display: flex;
         flex-grow: 1;
@@ -34,7 +42,7 @@ export class CreateNewComponent implements OnInit {
     role;
     faUser=faUser;
     newUserForm: FormGroup;
-    private formSubmitAttempt: boolean;
+    submitted = false;
 
     constructor( 
         private router:Router,
@@ -55,9 +63,21 @@ export class CreateNewComponent implements OnInit {
             })
         }
 
-        save(data) {
-            console.log(data);
+        get f() {
+            return this.newUserForm.controls;
         }
+
+        save(data){
+        this.submitted = true;
+
+        if (this.newUserForm.invalid) {
+            return;
+        }
+
+        console.log(data);
+        alert('SUCCESS!!');
+         
+    }
 
 
 }

@@ -14,8 +14,7 @@
                 <label class="col-lg-1 col-form-label">First Name:</label>
                 <div class="col-lg-3">
                     <input type="text" class="form-control" placeholder="First name" 
-                    formControlName="firstName"
-                    >
+                    formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors}" />
                         <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                             <div *ngIf="f.firstName.errors.required">First Name is required</div>
                         </div>
@@ -23,12 +22,21 @@
                 </div>
                 <label class="col-lg-1 col-form-label">Last Name:</label>
                 <div class="col-lg-3">
-                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+                    <input type="text" class="form-control" placeholder="Last name" formControlName="lastName"
+                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors}" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
                     <span class="form-text text-muted">Please enter your last name</span>
                 </div>
                 <label class="col-lg-1 col-form-label">Email:</label>
                 <div class="col-lg-3">
-                    <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email" 
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors}" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Check e-mail format</div>
+                    </div>
                     <span class="form-text text-muted">Please enter your email</span>
                 </div>   
             </div>
@@ -36,13 +44,21 @@
             <div class="form-group row form-group-marginless">
                 <label class="col-lg-1 col-form-label">Contact:</label>
                 <div class="col-lg-3">
-                    <input type="email" class="form-control" placeholder="Enter contact number" formControlName="contactNumber">
+                    <input type="email" class="form-control" placeholder="Enter contact number" formControlName="contactNumber"
+                    [ngClass]="{ 'is-invalid': submitted && f.contactNumber.errors }" />
+                    <div *ngIf="submitted && f.contactNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.contactNumber.errors.required">Contact is required</div>
+                    </div>
                     <span class="form-text text-muted">Please enter your contact</span>
                 </div>
                 <label class="col-lg-1 col-form-label">ID:</label>
                 <div class="col-lg-3">
                     <div class="kt-input-icon">
-                        <input type="text" class="form-control" placeholder="Kenyan Identification number" formControlName="idNumber">
+                        <input type="text" class="form-control" placeholder="Kenyan Identification number" 
+                        formControlName="idNumber" [ngClass]="{ 'is-invalid': submitted && f.idNumber.errors}" />
+                        <div *ngIf="submitted && f.idNumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.idNumber.errors.required">ID Number is required</div>
+                        </div>
                         <span class="kt-input-icon__icon kt-input-icon__icon--right"></span>
                     </div>
                     <span class="form-text text-muted">Please enter your Id Number</span>
@@ -50,7 +66,11 @@
                 <label class="col-lg-1 col-form-label">Address:</label>
                 <div class="col-lg-3">
                     <div class="kt-input-icon">
-                        <input type="text" class="form-control" placeholder="Enter your address" formControlName="address">
+                        <input type="text" class="form-control" placeholder="Enter your address" 
+                        formControlName="address" [ngClass]="{ 'is-invalid': submitted && f.address.errors}" />
+                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                            <div *ngIf="f.address.errors.required">Address is required</div>
+                        </div>
                         <span class="kt-input-icon__icon kt-input-icon__icon--right"></span>
                     </div>
                     <span class="form-text text-muted">Please enter your address</span>
@@ -61,7 +81,11 @@
                 <label class="col-lg-1 col-form-label">LR Number:</label>
                 <div class="col-lg-3">
                     <div class="kt-input-icon">
-                        <input type="text" class="form-control" placeholder="Enter the LR Number" formControlName="lrNumber">
+                        <input type="text" class="form-control" placeholder="Enter the LR Number" formControlName="lrNumber" 
+                        [ngClass]="{ 'is-invalid': submitted && f.lrNumber.errors}" />
+                        <div *ngIf="submitted && f.lrNumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.lrNumber.errors.required">A LR Number is required</div>
+                        </div>
                         <span class="kt-input-icon__icon kt-input-icon__icon--right"></span>
                     </div>
                     <span class="form-text text-muted">If unavailable create land record first</span>

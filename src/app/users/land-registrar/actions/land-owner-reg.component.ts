@@ -78,6 +78,6 @@ export class LandOwnerRegistrationComponent implements OnInit {
         }
 
         console.log(data);
-        alert('SUCCESS!! :-)');
+        alert('SUCCESS!!');
     }
 }
